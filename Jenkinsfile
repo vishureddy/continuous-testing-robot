@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-      label 'qatest'
-  }
+  agent any
   environment {
     QA_SERVER = 'https://jsonplaceholder.typicode.com'
   }
