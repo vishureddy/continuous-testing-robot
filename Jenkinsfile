@@ -9,7 +9,7 @@ pipeline {
 		        	sh 'python3 -m rflint --ignore LineTooLong .'
 		        	sh 'python3 -m robot.run --variable base_url:${QA_SERVER} --outputdir reports1 .'
                     sh 'python3 -m robot.run --variable base_url:${QA_SERVER} --rerunfailed reports1/output.xml --outputdir reports .'
-		        	sh 'python3 -m robot.rebot --merge --output reports/output.xml -l reports/log.html -r reports/report.html reports1/output.xml reports/output.xml'
+		        	sh 'python3 -m robot.rebot --merge --output reports1/output.xml -l reports1/log.html -r reports1/report.html reports/output.xml reports/output.xml'
 		        	sh 'exit 0'
 	      		}
 	      post {
